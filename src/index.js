@@ -229,11 +229,13 @@ class App extends React.Component {
             }
             {this.state.action &&
               <div id="action-section" className="row">
-                <select value={this.state.networkId} onChange={(e) => this.onSwitch(e.target.value)} className="form-select-lg mb-3 col-md-6 main-btn">
-                  {networks.map((network, i) => (
-                    <option key={i} value={network.id}>{network.name}</option>
-                  ))}
-                </select>
+                <div className="col-md-6 main-btn">
+                  <select value={this.state.networkId} onChange={(e) => this.onSwitch(e.target.value)} className="form-select-lg sel">
+                    {networks.map((network, i) => (
+                      <option key={i} value={network.id}>{network.name}</option>
+                    ))}
+                  </select>
+                </div>
                 <div className="col-md-6 text-center">
                   <a id="disconnect" className="btn btn-primary btn-lg btn-block main-btn" href="#!" role="button" onClick={() => this.onDisconnect()}>Disconnect Wallet</a>
                 </div>
